@@ -1,0 +1,391 @@
+
+x += 3       # increment x by 3; same as x = x + 3
+x -= 1       # decrement x by 1
+
+
+#input, convert, etc
+str_seconds = input("Please enter the number of seconds you wish to convert")
+total_secs = int(str_seconds)
+
+hours = total_secs // 3600
+secs_still_remaining = total_secs % 3600
+minutes =  secs_still_remaining // 60
+secs_finally_remaining = secs_still_remaining  % 60
+
+print("Hrs=", hours, "mins=", minutes, "secs=", secs_finally_remaining)
+
+##Turtle Graphics. Turtle is a MODULE/library, need to be imported!
+import turtle             # allows us to use the turtles library
+wn = turtle.Screen()      # creates a graphics window
+wn.bgcolor("lightgreen
+
+alex = turtle.Turtle()    # create a turtle named alex
+alex.color("red")
+alex.forward(150)         # tell alex to move forward by 150 units
+alex.left(90)             # turn by 90 degrees
+alex.forward(75)
+alex.right(80)
+alex.forward(99)
+
+tess = turtle.Turtle()           # create tess and set his pen width
+tess.pensize(5)
+tess.right(180)                  # turn tess around
+tess.forward(80)
+wn.exitonclick()                # wait for a user click on the canvas
+# 该模块为我们带来了两种可以使用的新类型：Turtle类型和 Screen类型。点符号turtle.Turtle表示“在turtle模块中定义的Turtle类型”。
+
+#for loop
+import turtle
+wn = turtle.Screen()
+wn.bgcolor("lightgreen")
+
+elan = turtle.Turtle()
+elan.shape("turtle")
+elan.speed(10)
+
+distance = 50
+angle = 90
+elan.up()   #脚印。or: tess.down() . or: elan.penup()
+for _ in range(10):
+    tess.stamp()
+    elan.forward(distance)
+    elan.right(angle)
+    distance = distance + 10
+    angle = angle - 3
+    print(dist)  #how far the turtle is traveling each time the for loop iterates
+wn.exitonclick()
+
+#importing modules
+import random
+diceThrow = random.randrange(1,7)  #random MODULE, random FUNCTION
+prob = random.random()            #randrange.random() is gonna fail
+print(prob)
+print(diceThrow)
+
+#no need to keep referring to the MODULE:
+from random import randrange, random  #后两个是functions
+
+prob = random()
+diceThorw = randrange(1,7)
+
+#What is the name of jane’s attribute (not method) ?
+jane = turtle.Turtle()    #  turtule:class.  Turtle: method.  Jane: instance.
+print(jane.x)             # x: attribute
+student.title            # student: class. title:attribute/instance
+june.right    # object.method
+june = turtle.Turtle  # turtle :modle name. Turtle: class in the module
+
+#debugging
+Syntax errors 语法
+Runtime Errors
+Semantic Errors #百分比忘记除以100，程序员发现
+
+
+# Week 2  Sequence, Mutation
+
+#Strings and Lists
+  # have sequences: strings, lists, tuples
+ my_list = ["3", "bungee", 4,"swallow"]
+ my_tuple = ('one', 2 , "three")
+ list = []
+ tuple = ()
+ print(type(t))
+
+ # index: find the item u want
+my_list[3]
+print(my_list[0])
+print(len(my_list))
+print(my_list[-1])
+
+  # the slice operator
+print(my_list[1:3])    #List Slices. start from 0 index, get index 1, stop at index 6 (not included).
+
+  # concatenation & repetition
+print(my_list + [6,7,8,9])
+print(my_list * 4)
+print((my_list) + [1]) *4)
+
+  # count & index. ccount: case sensitive!
+print(my_list.count("ha"))  # 4 and "4" dif!
+print(my_list.index("m"))   # first time it appears
+bio = ["Metatarsal", "Metatarsal", "Fibula", [], "Tibia", "Tibia", 43, "Femur", "Occipital", "Metatarsal"]
+print(bio.index([]))   # search first empty lists. 3
+print(bio.index(43))  # 6
+
+  # split & join from a List
+song = "The rain in Spain..."  # split: returns a list
+wds = song.split()  # split by spaces
+wds = song.split('ai') #['The r', 'n in Sp', 'n...']
+
+wds = ["red", "blue", "green"]
+glue = ';'
+s = glue.join(wds)  # red; blue; green
+print("***".join(wds)) # red***blue***green
+print("".join(wds)) # redbluegreen
+
+  # Iteration
+    # for
+for loop_variable in my_list:
+    print("Hi", loop_variable, "plz")
+
+for achar in "Go Spot Go":
+    print(achar)  # G O SPACE .....etc
+
+  # range
+import turtle            # set up alex
+wn = turtle.Screen()
+alex = turtle.Turtle()
+
+for aColor in ["yellow", "red", "purple", "blue"]:
+    alex.color(aColor) # dif colors!
+    alex.forward(50)
+    alex.left(90)
+
+wn.exitonclick()
+
+  # accumulator patter of iteration
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+accum = 0   # accumulator variable, set to be 0 initial value
+for w in nums:  #  w is my iterator variable
+    accum = accum + w  # update accumulator
+print(accum)   # 或者 indent, print it each time
+
+range(5)  # produce : [0,1,2,3,4] , doesn't produce a list!
+print(list(range(5))) # produce a list
+
+print("range(5): ")
+for i in range(5):
+    print(i)   # 0,1,2,3,4
+
+print("range(1,5): ")
+for i in range(1, 5):
+    print(i)   # 1,2,3,4
+
+sec_accum = 0
+for w in range(1,11):
+    sec_accum = sec_accum + w
+print(sec_accum)  # 55
+
+  # print middle values:
+w = range(10)
+
+tot = 0
+for num in w:  # in 后面的是iterable, 即 w。 num为iterator variable。
+    print(num)
+    tot += num
+    print(tot)
+print(tot)
+# 概念： iterable: 你的list。
+
+# Week 3 booleans & conditionals
+print(type(True))    # bool
+print(type("True"))  # str
+print(5 == 5)        # True
+x != y               # x is not equal to y
+# x=3: assignment.   x == 3: comparison(bool)
+
+  # logical operators:   and, or, not.
+      # operators:  literal, comparison, logical.
+n = 25
+print(n%2 == 0 or n%3 == 0)  # False
+
+  # in , not in  operators
+print('p' in 'apple')    # T
+print('i' in 'apple')    # F
+print('' in 'a')   # T
+print('x' not in 'apple')   # T
+print("a" in ["apple", "absolutely", "application", "nope"])    # F
+
+  # Conditional Execution: Binary Selection
+x = 15
+if x % 2 == 0:
+    print(x, "is even")
+else:
+    print(x, "is odd")
+
+courses = ["ENGR 101", "SI 110", "ENG 125", "SI 106", "CHEM 130"]
+if "SI 106" in courses:
+    output = "You can apply to SI!"
+else:
+    output = "Take SI 106!"
+
+  # Omitting the else Clause: Unary Sele. Just use 'if', not use 'else'.
+  # Nested conditionals: else - if 在 else stmt里面
+x = 10
+y = 3
+if x < y:
+    print("x is less than y")
+else:
+    if x > y:
+        print("x is greater than y")
+    else:
+        print("x and y must be equal")
+
+  # Chained conditionals:  elif
+if x < y:
+    print("x is less than y")
+elif x > y:    # elif: one or more!
+    print("x is greater than y")
+else:
+    print("x and y must be equal")
+
+  # The Accumulator Pattern with Conditionals
+phrase = "What a wonderful day to program"  # 1. initialize the accumulator variable
+tot = 0
+for char in phrase:  # 2. iterate
+    if char != " ":  # 3. update w/ 2 steps
+        tot = tot + 1
+print(tot)
+
+       # find max:
+nums = [9, 3, 8, 11, 5, 29, 2]
+best_num = nums[0]
+for n in nums:
+    if n > best_num:
+        best_num = n
+print(best_num)
+
+    # Write code to determine how many words in sentence start and end with the same letter, including one-letter words.
+sentence = "students flock to the arb for a variety of outdoor activities such as jogging and picnicking"
+
+split = sentence.split(" ")
+print(split)
+length = len(split)
+print(length)
+
+same_letter_count = 0
+for i in split:
+    if i[0] == i:
+        same_letter_count += 1
+    elif i[0] == i[-1]:
+        same_letter_count += 1
+print(same_letter_count)
+
+    # count the number of items with values > 3.0.
+rainfall_mi = "1.65, 1.46, 2.05, 3.03, 3.35, 3.46, 2.83, 3.23, 3.5, 2.52, 2.8, 1.85"
+list = rainfall_mi.split(", ")
+length = len(list)
+print(length)
+print(list)
+
+num_rainy_months = 0
+for i in list:
+    i = float(i)
+    if i > 3.0:
+        num_rainy_months += 1
+print(num_rainy_months)
+
+    # counts the number of words in sentence that contain either an “a” or an “e”.
+sentence = "python is a high level general purpose programming language that can be applied to many different classes of problems."
+split = sentence.split(" ")
+print(split)
+
+num_a_or_e = 0
+for i in split:
+    if ('a' in i) or ('e' in i):
+        num_a_or_e += 1
+
+# Week 4
+  # Sequence Mutation. Unlike strings & tuples, lists are mutable.
+fruit = ["banana", "apple", "cherry"]
+fruit[0] = "pear"
+fruit[-1] = "orange"
+alist[1:3] = ['x', 'y']
+alist[1:3] = []  # delete
+alist[4:4] = ['b', 'c']  # add items
+
+    # to mutate a str:
+greeting = "Hello, world!"
+newGreeting = 'J' + greeting[1:]
+
+    # List Element Deletion
+a = ['one', 'two', 'three']
+del a[1]
+del alist[1:5]
+
+    # Objects and References
+a = "banana"
+b = "banana"
+print(a is b)  # id(a) == id(b). return true if the two references are to the same object.
+
+    # not same for Lists. They need to have different ids so that mutations of list a do not affect list b.
+a = [81,82,83]
+b = [81,82,83]
+print(a is b)  # F.   use 'is' for str
+print(a == b)  # T
+
+    # aliasing
+a = [81,82,83]
+b = [81,82,83]
+print(a is b)  # F
+
+b = a
+print(a == b)  # T
+print(a is b)  # T
+
+b[0] = 5
+print(a)  # when u change B, u change A too.
+
+    # closing Lists
+b = a[:]       # make a clone using slice
+
+    # concatenated with another using +=, it extends the original object. If this is done in the longer form (item = item + object) then it makes a copy.
+x = ["dogs", "cats", "birds", "reptiles"]
+y = x
+x += ['fish', 'horses']
+y = y + ['sheep']
+
+
+sent = "The mall has excellent sales right now."
+wrds = sent.split()
+wrds[1] = 'store'
+new_sent = " ".join(wrds)
+
+  # Methods on Strings and Lists
+     #List Methods
+mylist = []
+mylist.append(5)
+mylist.insert(1, 12)  # vs. mylist[1] = 12
+print(mylist.count(12))  # count whose value=12
+print(mylist.index(3))  # where is 3
+mylist.reverse()
+mylist.remove(5)  # del value=5. # vs. del. mylist[1] delete position 1
+mylist.sort()
+
+lastitem = mylist.pop()  #
+print(lastitem)   # 27，最后一个
+print(mylist)    # 把list 的最后一个删掉了
+
+     # Append versus Concatenate. append which simply modifies the list
+origlist = origlist + ["cat"]  # extend
+newlist = origlist + ["cat"]  # copy
+origlist += ["cat"]    # extend, not copy
+
+    # Non-mutating Methods on Strings
+str.upper()   # lower, count, index, strip, replace, format
+ss = "    Hello, World    "
+print("***"+ss.strip()+"***")  # ***Hello, World***
+news = ss.replace("o", "***")  #     Hell***, W***rld
+
+s = "python rocks"
+print(s[1]*s.index("n"))  # yyyyy
+
+scores = [("Rodney Dangerfield", -1), ("Marlon Brando", 1), ("You", 100)]
+for person in scores:
+    name = person[0]
+    score = person[1]
+    print("Hello {}. Your score is {}.".format(name, score))
+
+origPrice = float(input('Enter the original price: $'))
+discount = float(input('Enter discount percentage: '))
+newPrice = (1 - discount/100)*origPrice
+calculation = '${:.2f} discounted by {}% is ${:.2f}.'.format(origPrice, discount, newPrice)
+print(calculation)
+
+  # Accumulating Lists and Strings
+nums = [3, 5, 8]
+accum = []
+for w in nums:
+    x = w**2
+    accum.append(x)
+print(accum)
